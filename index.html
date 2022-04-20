@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>플렉스 레이아웃</title>
+    <style>
+        * {
+            margin: 0;
+            /* padding: 0; */
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        section h3 {
+            font-size: 40px;
+            margin-bottom: 30px;
+        }
+
+        section strong {
+            font-size: 25px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        section .container a {
+            width: 120px;
+            background-color: #ff0000;
+            display: block;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            border-radius: 0 20px;
+            box-shadow: 3px 3px 10px #ff00005b;
+            margin-top: 20px;
+            /* 
+            가로 : 120px;
+            내부여백 : 위아래10px 좌우0;
+            글자 가운데 정렬
+            배경컬러
+            글자컬러
+            모서리 곡선 : 0 20px 0 20px;
+            그림자 : 3px 3px 10px 색상;
+            외부여백-위로 : 20px;
+
+            */
+        }
+
+        .cont01 {
+            max-width: 1280px;
+            width: 100%;
+            margin: 100px auto;
+            /* background-color: #eee; */
+        }
+
+        .cont01 .container {
+            display: flex;
+            height: 400px;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .cont01 .container figure {
+            width: 50%;
+            height: 100%;
+        }
+
+        .cont01 .container figure img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cont01 .container div {
+            width: 40%;
+            /* background-color: #ffcc00; */
+        }
+
+        .cont01 .container:nth-of-type(2) figure {
+            order: 1;
+        }
+
+        /* .cont02 */
+        .cont02 {
+            background-color: #eee;
+            padding: 100px 0;
+        }
+
+        .cont02 .wrap {
+            max-width: 1280px;
+            width: 100%;
+            /* background-color: tan; */
+            margin: 0 auto;
+            /* display: flex; */
+        }
+
+        .cont02 .wrap .container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .cont02 .wrap .container .img {
+            width: 60%;
+            height: 500px;
+            /* background-color: rgb(1, 136, 255); */
+
+            display: flex;
+            flex-wrap: wrap;
+            align-content: space-between;
+        }
+
+        .cont02 .wrap .container .img figure {
+            width: 100%;
+            height: 48%;
+        }
+
+        .cont02 .wrap .container .img figure img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cont02 .wrap .container .info {
+            width: 38%;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: space-evenly;
+        }
+
+        @media screen and (max-width: 1024px) {
+            .cont01 .container {
+                height: auto;
+            }
+
+            .cont01 .container figure {
+                width: 100%;
+            }
+
+            .cont01 .container div {
+                width: 100%;
+            }
+
+            .cont01 .container:nth-of-type(2) figure {
+                order: 0;
+            }
+
+            .cont02 .wrap .container .img {
+                width: 100%;
+            }
+
+            .cont02 .wrap .container .info {
+                width: 100%;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <section class="cont01">
+        <h3>section title</h3>
+        <div class="container">
+            <figure>
+                <img src="images/coffee04.jpg" alt="커피" />
+            </figure>
+            <div>
+                <strong>items title</strong>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae dolorem voluptates ullam! Deserunt
+                    consequuntur hic, nihil placeat nulla voluptatum voluptate praesentium quibusdam vero eaque animi
+                    quis illo modi recusandae est?</p>
+                <a href="#">more</a>
+            </div>
+        </div><!-- .container end -->
+
+        <div class="container">
+            <figure>
+                <img src="images/coffee04.jpg" alt="커피" />
+            </figure>
+            <div>
+                <strong>items title</strong>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae dolorem voluptates ullam! Deserunt
+                    consequuntur hic, nihil placeat nulla voluptatum voluptate praesentium quibusdam vero eaque animi
+                    quis illo modi recusandae est?</p>
+                <a href="#">more</a>
+            </div>
+        </div><!-- .container end -->
+
+    </section><!-- .cont01 end -->
+
+    <section class="cont02">
+        <div class="wrap">
+            <h3>section title2</h3>
+            <div class="container">
+                <div class="img">
+                    <figure>
+                        <img src="images/coffee05.jpg" alt="커피" />
+                    </figure>
+                    <figure>
+                        <img src="images/coffee03.jpg" alt="커피" />
+                    </figure>
+                </div><!-- .img end -->
+
+                <div class="info">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate optio enim quod quos, in vel
+                        sed id, voluptas nostrum placeat repudiandae eos illum ad consequatur perspiciatis tempore dolor
+                        omnis sapiente.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate optio enim
+                        quod quos, in vel sed id, voluptas nostrum placeat repudiandae eos illum ad consequatur
+                        perspiciatis tempore dolor omnis sapiente.</p>
+                    <a href="#">more</a>
+                </div><!-- .info -->
+            </div><!-- .container end -->
+        </div><!-- .wrap end -->
+    </section><!-- .cont02 end -->
+</body>
+
+</html>
